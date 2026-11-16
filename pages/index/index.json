@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "每日打卡",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#F6F7FB",
+  "backgroundTextStyle": "dark"
+}

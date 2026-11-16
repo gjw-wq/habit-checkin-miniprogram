@@ -1,0 +1,104 @@
+<!-- 项目详情页：信息 + 统计 + 日历 + 打卡记录 -->
+<view class="page" wx:if="{{project}}">
+
+  <!-- 项目信息卡片（右上角删除入口） -->
+  <view class="card info-card">
+    <view class="delete-entry" bindtap="onDeleteProject">删除项目</view>
+    <view class="info-name">{{project.name}}</view>
+    <view class="info-stats">
+      <view class="info-stat">
+        <view class="info-stat-value">{{total}}</view>
+        <view class="info-stat-label">已打卡天数</view>
+      </view>
+      <view class="info-stat">
+        <view class="info-stat-value">{{streak}}</view>
+        <view class="info-stat-label">连续天数</view>
+      </view>
+      <view class="info-stat">
+        <view class="info-stat-value">{{project.target}}</view>
+        <view class="info-stat-label">目标天数</view>
+      </view>
+    </view>
+    <view class="progress-track">
+      <view class="progress-bar" style="width: {{percent}}%;"></view>
+    </view>
+    <view class="progress-text">已完成 {{rate}}%</view>
+  </view>
+
+  <!-- 统计卡片 -->
+  <view class="card">
+    <view class="card-title">打卡统计</view>
+    <view class="stat-grid">
+      <view class="stat-cell">
+        <view class="stat-cell-value">{{total}}</view>
+        <view class="stat-cell-label">总打卡天数</view>
+      </view>
+      <view class="stat-cell">
+        <view class="stat-cell-value">{{streak}}</view>
+        <view class="stat-cell-label">连续天数</view>
+      </view>
+      <view class="stat-cell">
+        <view class="stat-cell-value">{{rate}}%</view>
+        <view class="stat-cell-label">完成率</view>
+      </view>
+      <view class="stat-cell">
+        <view class="stat-cell-value">{{longest}}</view>
+        <view class="stat-cell-label">最长连续</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 日历卡片 -->
+  <view class="card">
+    <view class="calendar-header">
+      <view class="calendar-arrow" bindtap="onPrevMonth">‹</view>
+      <view class="calendar-title">{{calendarTitle}}</view>
+      <view class="calendar-arrow {{canNextMonth ? '' : 'disabled'}}" bindtap="onNextMonth">›</view>
+    </view>
+    <view class="calendar-week">
+      <view class="calendar-weekday" wx:for="{{weekdays}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="calendar-grid">
+      <view
+        wx:for="{{calendarCells}}"
+        wx:key="index"
+        class="calendar-day {{item.blank ? 'blank' : ''}} {{item.checked ? 'checked' : ''}} {{item.isToday ? 'today' : ''}} {{item.isFuture ? 'future' : ''}}"
+        data-index="{{index}}"
+        bindtap="onTapDay"
+      >
+        {{item.day}}
+      </view>
+    </view>
+    <view class="calendar-legend">
+      <view class="legend-item"><view class="legend-dot legend-green"></view>已打卡</view>
+      <view class="legend-item"><view class="legend-dot legend-blue"></view>今天</view>
+    </view>
+  </view>
+
+  <!-- 今日打卡按钮 -->
+  <view class="checkin-area">
+    <view
+      class="{{checkedToday ? 'btn-disabled' : 'btn-primary'}} checkin-btn"
+      bindtap="onCheckin"
+    >{{checkedToday ? "今日已打卡" : "立即打卡"}}</view>
+  </view>
+
+  <!-- 打卡记录列表 -->
+  <view class="card record-card" wx:if="{{records.length}}">
+    <view class="card-title">打卡记录（{{records.length}}）</view>
+    <view class="record-row" wx:for="{{records}}" wx:key="id">
+      <view class="record-dot"></view>
+      <view class="record-info">
+        <view class="record-date">{{item.date}}</view>
+        <view class="record-note" wx:if="{{item.note}}">{{item.note}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{!records.length}}">
+    <view class="empty-icon">🌱</view>
+    <view class="empty-text">还没有打卡记录</view>
+    <view class="empty-text">完成第一次打卡吧</view>
+  </view>
+
+  <view class="bottom-space"></view>
+</view>

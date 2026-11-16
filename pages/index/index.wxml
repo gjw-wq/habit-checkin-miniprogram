@@ -1,0 +1,65 @@
+<!-- 每日打卡首页：项目卡片列表 -->
+<view class="page">
+
+  <!-- 顶部简介 -->
+  <view class="header">
+    <view class="header-title">我的打卡</view>
+    <view class="header-sub">今天也要坚持哦</view>
+  </view>
+
+  <!-- 项目卡片列表 -->
+  <block wx:if="{{!isEmpty}}">
+    <view class="card project-card" wx:for="{{projects}}" wx:key="id">
+      <view class="project-top" data-id="{{item.id}}" bindtap="onOpenDetail">
+        <view class="project-left">
+          <view class="project-name">{{item.name}}</view>
+          <view class="project-target">目标 {{item.target}} 天</view>
+        </view>
+        <view class="status {{item.checkedToday ? 'done' : 'todo'}}">
+          <view class="status-icon">{{item.checkedToday ? "✓" : ""}}</view>
+        </view>
+      </view>
+
+      <view class="project-stats">
+        <view class="mini-stat">
+          <view class="mini-stat-value">{{item.streak}}</view>
+          <view class="mini-stat-label">连续天数</view>
+        </view>
+        <view class="mini-stat">
+          <view class="mini-stat-value">{{item.total}}</view>
+          <view class="mini-stat-label">总打卡天数</view>
+        </view>
+        <view class="mini-stat">
+          <view class="mini-stat-value">{{item.rate}}%</view>
+          <view class="mini-stat-label">完成率</view>
+        </view>
+      </view>
+
+      <view class="progress-track">
+        <view class="progress-bar" style="width: {{item.percent}}%;"></view>
+      </view>
+      <view class="progress-text">已打卡 {{item.total}} / {{item.target}} 天</view>
+
+      <view
+        class="{{item.checkedToday ? 'btn-disabled' : 'btn-primary'}} checkin-btn"
+        data-id="{{item.id}}"
+        bindtap="onCheckin"
+      >{{item.checkedToday ? "今日已打卡" : "立即打卡"}}</view>
+    </view>
+  </block>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{isEmpty}}">
+    <view class="empty-icon">🎯</view>
+    <view class="empty-text">还没有打卡项目</view>
+    <view class="empty-text">创建一个，开始你的坚持</view>
+    <view class="btn-primary empty-btn" bindtap="onAdd">去创建项目</view>
+  </view>
+
+  <!-- 添加项目按钮 -->
+  <view class="add-area" wx:if="{{!isEmpty}}">
+    <view class="btn-primary add-btn" bindtap="onAdd">+ 添加项目</view>
+  </view>
+
+  <view class="bottom-space"></view>
+</view>

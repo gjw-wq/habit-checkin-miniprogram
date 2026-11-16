@@ -1,0 +1,80 @@
+/* 全局公共样式：统一浅灰底 + 白色卡片圆角阴影，绿色为完成语义色 */
+page {
+  background: #F6F7FB;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* 通用卡片 */
+.card {
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(31, 45, 61, 0.08);
+  padding: 32rpx;
+  margin: 24rpx 32rpx;
+}
+
+/* 卡片标题 */
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* 主操作按钮 */
+.btn-primary {
+  background: #07C160;
+  color: #ffffff;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-primary:active {
+  background: #06AD56;
+}
+
+.btn-disabled {
+  background: #E8E8E8;
+  color: #AAAAAA;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 进度条 */
+.progress-track {
+  height: 14rpx;
+  background: #EEF0F4;
+  border-radius: 7rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #07C160;
+  border-radius: 7rpx;
+  transition: width 0.3s;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.empty-icon {
+  font-size: 88rpx;
+  margin-bottom: 24rpx;
+}
+
+.empty-text {
+  color: #999999;
+  font-size: 28rpx;
+}

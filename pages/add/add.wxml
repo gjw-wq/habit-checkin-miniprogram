@@ -1,0 +1,39 @@
+<!-- 添加打卡项目页 -->
+<view class="page">
+
+  <view class="card">
+    <view class="section-title">项目名称</view>
+    <view class="input-wrap">
+      <input
+        class="name-input"
+        value="{{name}}"
+        placeholder="例如：每天学习、每天运动"
+        placeholder-class="input-placeholder"
+        bindinput="onNameInput"
+        maxlength="20"
+      />
+    </view>
+
+    <view class="section-title">目标天数</view>
+    <view class="input-wrap">
+      <input
+        class="name-input"
+        type="number"
+        value="{{target}}"
+        placeholder="连续坚持多少天"
+        placeholder-class="input-placeholder"
+        bindinput="onTargetInput"
+      />
+      <text class="unit">天</text>
+    </view>
+
+    <view class="tips">
+      <view class="tip-item">🔥 连续打卡会累计连续天数，中断后重新计算</view>
+      <view class="tip-item">📅 每天只能打卡一次，可以写一句打卡备注</view>
+    </view>
+  </view>
+
+  <view class="save-area">
+    <view class="btn-primary save-btn" bindtap="onSave">创建项目</view>
+  </view>
+</view>

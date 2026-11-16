@@ -1,0 +1,53 @@
+.section-title {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  background: #F7F8FA;
+  border-radius: 16rpx;
+  padding: 8rpx 24rpx;
+  margin-bottom: 32rpx;
+}
+
+.name-input {
+  flex: 1;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.input-placeholder {
+  color: #CCCCCC;
+}
+
+.unit {
+  font-size: 28rpx;
+  color: #999999;
+  margin-left: 12rpx;
+}
+
+.tips {
+  margin-top: 8rpx;
+}
+
+.tip-item {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  line-height: 1.8;
+}
+
+.save-area {
+  margin: 48rpx 32rpx 60rpx;
+}
+
+.save-btn {
+  padding: 26rpx 0;
+}
+
+.save-btn:active {
+  opacity: 0.85;
+}

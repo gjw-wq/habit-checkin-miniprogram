@@ -1,0 +1,131 @@
+/* 顶部简介 */
+.header {
+  padding: 40rpx 48rpx 8rpx;
+}
+
+.header-title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #333333;
+}
+
+.header-sub {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+
+/* 项目卡片 */
+.project-card {
+  padding: 32rpx;
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-name {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #333333;
+}
+
+.project-target {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 今日状态图标：绿色勾 / 灰色圆圈 */
+.status {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status.done {
+  background: #07C160;
+  box-shadow: 0 8rpx 20rpx rgba(7, 193, 96, 0.35);
+}
+
+.status.done .status-icon {
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.status.todo {
+  border: 4rpx solid #D9DCE1;
+  background: #F7F8FA;
+  box-sizing: border-box;
+}
+
+/* 数据行 */
+.project-stats {
+  display: flex;
+  margin-top: 28rpx;
+  padding: 20rpx 0;
+  background: #F7F8FA;
+  border-radius: 16rpx;
+}
+
+.mini-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mini-stat-value {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333333;
+}
+
+.mini-stat-label {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+/* 进度 */
+.progress-track {
+  margin-top: 24rpx;
+}
+
+.progress-text {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #999999;
+  text-align: right;
+}
+
+/* 打卡按钮 */
+.checkin-btn {
+  margin-top: 24rpx;
+  padding: 20rpx 0;
+}
+
+/* 添加按钮 */
+.add-area {
+  margin: 40rpx 32rpx 0;
+}
+
+.add-btn {
+  padding: 24rpx 0;
+}
+
+.empty-btn {
+  margin-top: 40rpx;
+  padding: 20rpx 64rpx;
+}
+
+.bottom-space {
+  height: 80rpx;
+}
